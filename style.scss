@@ -1,0 +1,242 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@700&display=swap");
+
+$gradient: linear-gradient(110deg, #a3a8f0, #696fdd);
+$bg: #f0f0fc;
+$lightText: #b3b5c6;
+$darkText: #6d708d;
+$darkNum: #494c5f;
+$pageFont: "Monserrat", sans-serif;
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: $pageFont;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background-color: $bg;
+}
+
+.bg-top {
+  position: absolute;
+  bottom: 10px;
+  right: 0px;
+  z-index: -1;
+}
+
+.bg-bottom {
+  position: absolute;
+  left: 0;
+  bottom: 0;
+  z-index: -1;
+}
+
+.heading {
+  color: $darkText;
+  font-size: 2em;
+  font-weight: 700;
+  padding: 50px 0px 30px 0;
+}
+
+.toggle {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 300px;
+  color: $lightText;
+  font-size: 1.2em;
+}
+
+.switch {
+  position: relative;
+  display: inline-block;
+  width: 60px;
+  height: 34px;
+
+  input {
+    opacity: 0;
+    width: 0;
+    height: 0;
+  }
+}
+
+/* The slider */
+.slider {
+  position: absolute;
+  cursor: pointer;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: $gradient;
+  -webkit-transition: 0.4s;
+  transition: 0.4s;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: 26px;
+    width: 26px;
+    left: 4px;
+    bottom: 4px;
+    background-color: white;
+    -webkit-transition: 0.4s;
+    transition: 0.4s;
+  }
+
+  &.round {
+    border-radius: 34px;
+  }
+
+  &.round:before {
+    border-radius: 50%;
+  }
+}
+
+input:checked + .slider:before {
+  -webkit-transform: translateX(26px);
+  -ms-transform: translateX(26px);
+  transform: translateX(26px);
+}
+
+.cards {
+  position: relative;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  width: 900px;
+  top: 50px;
+  display: flex;
+  box-shadow: 0 0 15px #c5c5c5;
+  font-family: $pageFont;
+  font-weight: 700;
+
+  .card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 350px;
+    width: 300px;
+    background-color: white;
+    border-radius: 10px;
+  }
+
+  .mid {
+    position: absolute;
+    bottom: -25px;
+    left: 300px;
+    background: $gradient;
+    height: 400px;
+
+    .package {
+      position: relative;
+      bottom: 40px;
+      color: white;
+    }
+
+    .price {
+      position: relative;
+      bottom: 30px;
+      color: white;
+      font-size: 3em;
+    }
+
+    .storage {
+      position: relative;
+      bottom: 10px;
+      color: white;
+    }
+
+    .users {
+      position: relative;
+      color: white;
+      padding: 5px 50px 10px 50px;
+      border-bottom: 1px solid #c9c9c9;
+    }
+
+    .bandwidth {
+      position: relative;
+      top: 20px;
+      color: white;
+    }
+
+    .btn-learn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      position: relative;
+      top: 40px;
+      width: 250px;
+      height: 30px;
+      background: white;
+      color: #696fdd;
+
+      &:hover {
+        color: white;
+        background: transparent;
+        border: 1px solid white;
+      }
+    }
+  }
+
+  .package {
+    position: relative;
+    bottom: 40px;
+    color: $darkText;
+  }
+
+  .price {
+    position: relative;
+    bottom: 30px;
+    color: $darkNum;
+    font-size: 3em;
+  }
+
+  .storage {
+    position: relative;
+    bottom: 10px;
+    color: $darkText;
+    padding: 15px 60px 15px 60px;
+    border-top: 1px solid #c9c9c9;
+    border-bottom: 1px solid #c9c9c9;
+  }
+
+  .users {
+    position: relative;
+    color: $darkText;
+    padding: 5px 45px 10px 45px;
+    border-bottom: 1px solid #c9c9c9;
+  }
+
+  .bandwidth {
+    position: relative;
+    top: 15px;
+    color: $darkText;
+    padding: 0 45px 15px 45px;
+    border-bottom: 1px solid #c9c9c965;
+  }
+
+  .btn-learn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    position: relative;
+    top: 40px;
+    width: 250px;
+    height: 30px;
+    background: $gradient;
+    color: white;
+    border-radius: 5px;
+    font-size: 0.8em;
+    text-transform: uppercase;
+
+    &:hover {
+      color: $darkText;
+      background: white;
+      border: 1px solid #696fdd;
+    }
+  }
+}
